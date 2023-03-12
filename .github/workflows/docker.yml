@@ -1,4 +1,4 @@
-name: CSIRO Container
+name: CSIRO app container
 
 env:
   IMAGE_NAME: csiro-node-app
