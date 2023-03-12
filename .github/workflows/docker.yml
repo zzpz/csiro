@@ -1,4 +1,4 @@
-name: Node.js Package
+name: CSIRO Container
 
 env:
   IMAGE_NAME: csiro-node-app
@@ -16,7 +16,7 @@ jobs:
     steps:
 
     - name: Checkout code 
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     
     - name: Install dependencies
       run: npm install
