@@ -1,12 +1,12 @@
 {
-  "name": "csiro",
+  "name": "@zzpz/csiro",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "start": "npx tsc && node dist/cli.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "exit 0"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +18,8 @@
   },
   "dependencies": {
     "csv-parse": "^5.3.6"
+  },
+  "publishConfig": {
+    "@zzpz:registry": "https://npm.pkg.github.com"
   }
 }

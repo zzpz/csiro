@@ -1,0 +1,24 @@
+name: Node.js Package
+
+env:
+  IMAGE_NAME: csiro-node-app
+  IMAGE_TAG: latest
+  USERNAME: zzpz
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code 
+      uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build -t ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} .
+    - name: Log in to the ghcr.io registry
+      run: echo ${{ secrets.GHCR_PAT }} | docker login ghcr.io -u ${{ env.USERNAME }} --password-stdin
+    - name: Push the Docker image to the ghcr.io registry
+      run: docker push ghcr.io/${{ env.USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}

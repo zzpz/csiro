@@ -1,6 +1,7 @@
 # base image -alpine is much smaller image size
 FROM node:lts-alpine3.17
 
+LABEL org.opencontainers.image.source="https://github.com/zzpz/csiro"
 
 # workdir
 WORKDIR /app
