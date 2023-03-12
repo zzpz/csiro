@@ -1,0 +1,5 @@
+*.pdf
+node_modules/*
+input/*
+output/*
+dist/*
