@@ -14,11 +14,22 @@ jobs:
     name: Build and publish
     runs-on: ubuntu-latest
     steps:
+
     - name: Checkout code 
       uses: actions/checkout@v2
+    
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build application
+      run: npm run build
+
+# should probably be using the docker/build-push-action?
     - name: Build the Docker image
       run: docker build -t ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} .
+    
     - name: Log in to the ghcr.io registry
       run: echo ${{ secrets.GHCR_PAT }} | docker login ghcr.io -u ${{ env.USERNAME }} --password-stdin
+    
     - name: Push the Docker image to the ghcr.io registry
       run: docker push ghcr.io/${{ env.USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
