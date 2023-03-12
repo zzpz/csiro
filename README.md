@@ -1,5 +1,7 @@
 # csiro
 
+[![CSIRO app container](https://github.com/zzpz/csiro/actions/workflows/docker.yml/badge.svg)](https://github.com/zzpz/csiro/actions/workflows/docker.yml)
+
 ## Building and running locally
 
 Build the node app
