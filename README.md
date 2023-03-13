@@ -8,6 +8,7 @@ in appropriately to pull image
 ## Examples
 
 [Designing a system to integrate app into](diagrams/architecture.md)
+
 [Example Architecture - Large](diagrams/example-architecture-large.png)
 
 Example usage ![demo](diagrams/demo.gif)
