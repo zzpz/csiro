@@ -5,9 +5,14 @@
 note: assumes docker installed and dockerhub/ghcr account configured and logged
 in appropriately to pull image
 
-## Example architecture for using this
+## Examples
 
-[architecture](diagrams/architecture.md)
+[Designing a system to integrate app into](diagrams/architecture.md)
+[Example Architecture - Large](diagrams/example-architecture-large.png)
+
+Example usage ![demo](diagrams/demo.gif)
+
+---
 
 ## Pull the image and run locally
 
