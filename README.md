@@ -2,6 +2,31 @@
 
 [![CSIRO app container](https://github.com/zzpz/csiro/actions/workflows/docker.yml/badge.svg)](https://github.com/zzpz/csiro/actions/workflows/docker.yml)
 
+note: assumes docker installed and dockerhub/ghcr account configured and logged
+in appropriately to pull image
+
+## Example architecture for using this
+
+[architecture](diagrams/architecture.md)
+
+## Pull the image and run locally
+
+```bash
+#DockerHub
+docker pull zzpz/csiro-node-app:latest
+#run the image, mounting local input/output folders
+docker run -ti -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output csiro-node-app
+```
+
+or
+
+```bash
+#Github Container Registry
+docker pull ghcr.io/zzpz/csiro-node-app:latest
+#run the image, mounting local input/output folders
+docker run -ti -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output csiro-node-app
+```
+
 ## Building and running locally
 
 Build the node app
